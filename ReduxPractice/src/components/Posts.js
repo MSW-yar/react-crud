@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 
+import SearchPost from "./SearchPost";
+
 class Posts extends Component {
   handleAddPost = e => {
     const { postTitle, postBody } = e.target.children;
@@ -50,14 +52,20 @@ class Posts extends Component {
   render() {
     return (
       <div>
+        <p style={{ "text-align": "center" }}>Add New Post</p>
         {this.addPost(this.handleAddPost)}
+
+        <p style={{ "text-align": "center" }}>Search a Post</p>
+        <SearchPost />
         <div id="posts"> {this.mapEachPost()} </div>
       </div>
     );
   }
 }
 
-const mapStateToProps = (state, ownState) => {
+//  ================= //
+
+const mapStateToProps = state => {
   return {
     posts: state.posts
   };
@@ -74,6 +82,8 @@ const mapDispatchToProps = dispatch => {
     }
   };
 };
+
+//  ============== //
 
 export default connect(
   mapStateToProps,

@@ -30,6 +30,24 @@ export const rootReducer = (state = initState, action) => {
         })
       };
       break;
+
+    case "updatePost":
+      let posts = state.posts.filter(post => {
+        return post.id !== action.id;
+      });
+      newState = {
+        ...state,
+        posts: [
+          ...posts,
+          {
+            title: action.title,
+            body: action.body,
+            id: action.id
+          }
+        ]
+      };
+      break;
+
     default:
       break;
   }

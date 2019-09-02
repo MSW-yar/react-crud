@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 
+import UpdatePost from "./UpdatePost";
+
 class OnePost extends Component {
   handleDeletePost = () => {
     this.props.deletePost(this.props.post.id);
@@ -14,6 +16,9 @@ class OnePost extends Component {
         <h1>{this.props.post.title}</h1>
         <h2>{this.props.post.body}</h2>
         <button onClick={this.handleDeletePost}>Delete Post</button>
+        <br />
+        <br />
+        <UpdatePost post={this.props.post} />
       </div>
     ) : (
       <div className="error">
@@ -26,6 +31,8 @@ class OnePost extends Component {
     return <div>{post}</div>;
   }
 }
+
+//  ============================= //
 
 const mapStateToProps = (state, ownState) => {
   let id = ownState.match.params.postId;
@@ -47,6 +54,7 @@ const mapDispatchToProps = dispatch => {
   };
 };
 
+// ================ //
 export default connect(
   mapStateToProps,
   mapDispatchToProps
