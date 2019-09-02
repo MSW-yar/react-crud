@@ -1,0 +1,37 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+form {
+  padding: 2%;
+  text-align: center;
+  background: sandybrown;
+  color: bisque;
+}
+
+button {
+  width: 50%;
+  border-radius: 30%;
+  background: seagreen;
+  color: white;
+}
+
+.error {
+  color: red;
+  font-size: xx-large;
+  text-align: center;
+}
+
+#posts {
+  text-align: center;
+  padding: 3%;
+}
+#posts  a {
+  text-decoration:none;
+  color: green; 
+}
